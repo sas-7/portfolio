@@ -4,26 +4,26 @@ import GithubIcon from "../../public/github.svg";
 import LinkedInIcon from "../../public/linkedin.svg";
 
 const EmailSection = () => {
-  const formRef = useRef(null); // Reference to the form element
-  const [error, setError] = useState(false); // State to track error
-  const [success, setSuccess] = useState(false); // State to track success
+  const formRef = useRef(null);
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
 
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        formRef.current, // Reference to the form
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
+        "service_pt7i6fe",
+        "template_0o2a1qk",
+        formRef.current,
+        "7fofTmxSDml9Na1_A"
       )
       .then(
         (result) => {
-          setSuccess(true); // Set success state to true
+          setSuccess(true);
         },
         (error) => {
-          setError(true); // Set error state to true
+          setError(true);
         }
       );
   };
@@ -47,11 +47,7 @@ const EmailSection = () => {
         </div>
       </div>
       <div>
-        <form
-          ref={formRef} // Assign formRef to the form element
-          onSubmit={sendEmail} // Call sendEmail function on form submission
-          className="flex flex-col "
-        >
+        <form ref={formRef} onSubmit={sendEmail} className="flex flex-col ">
           <div className="mb-6">
             <label
               htmlFor="email"
@@ -70,18 +66,18 @@ const EmailSection = () => {
           </div>
           <div className="mb-6">
             <label
-              htmlFor="subject"
+              htmlFor="name"
               className="text-white block mb-2 text-sm font-medium"
             >
-              Subject
+              Name
             </label>
             <input
               type="text"
-              id="subject"
-              name="subject"
+              id="name"
+              name="name"
               required
               className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Just saying hi"
+              placeholder="Your Name"
             />
           </div>
           <div className="mb-6">
