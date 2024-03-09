@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import NavLink from "./NavLink";
 import MenuOverlay from "./MenuOverlay";
+import AboutSection from "./AboutSection";
+import ProjectSection from "./ProjectSection";
+import EmailSection from "./EmailSection";
 
 const navLinks = [
   {
@@ -10,7 +13,7 @@ const navLinks = [
   },
   {
     title: "Projects",
-    path: "#project",
+    path: "#projects",
   },
   {
     title: "Contact",
@@ -55,7 +58,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      {navbarOpen && <MenuOverlay links={navLinks} />}
+      {navbarOpen ? (
+        <MenuOverlay links={navLinks} closeMenu={() => setNavbarOpen(false)} />
+      ) : null}
     </nav>
   );
 };

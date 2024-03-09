@@ -1,46 +1,69 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-
-const projectData = [
-  {
-    id: 1,
-    title: "PathPulse",
-    image: "/images/project/1.png",
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 2,
-    title: "File Compressor",
-    image: "/images/project/2.png",
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-  {
-    id: 3,
-    title: "cChat",
-    image: "/images/project/3.png",
-    gitUrl: "/",
-    previewUrl: "/",
-  },
-];
+import { project } from "./comp";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
 
 const ProjectSection = () => {
   return (
     <>
-      <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
+      <h2
+        className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12"
+        id="project"
+      >
         My Projects
       </h2>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {projectData.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            imgUrl={project.image}
-            gitUrl={project.gitUrl}
-            previewUrl={project.previewUrl}
-          />
-        ))}
+
+      <div className="mt-12 flex">
+        <VerticalTimeline>
+          {project.map((project, index) => (
+            <VerticalTimelineElement
+              key={project.institute}
+              date={project.date}
+              iconStyle={{ background: project.iconBg }}
+              icon={
+                <div className="flex justify-center items-center w-full h-full">
+                  <img
+                    src={project.icon}
+                    alt={project.institute}
+                    className="w-[60%] h-[60%] object-contain"
+                  />
+                </div>
+              }
+              contentStyle={{
+                borderBottom: "8px",
+                borderStyle: "solid",
+                borderBottomColor: project.iconBg,
+                boxShadow: "none",
+              }}
+            >
+              <div>
+                <h3 className="text-black text-xl font-poppins font-semibold">
+                  {project.title}
+                </h3>
+              </div>
+              <ProjectCard
+                key={project.id}
+                imgUrl={project.image}
+                gitUrl={project.gitUrl}
+                previewUrl={project.previewUrl}
+              />
+              <ul className="my-5 list-disc ml-5 space-y-2">
+                {project.points.map((point, index) => (
+                  <li
+                    key={`project-point-${index}`}
+                    className="text-black font-normal pl-1 text-sm"
+                  >
+                    {point}
+                  </li>
+                ))}
+              </ul>
+            </VerticalTimelineElement>
+          ))}
+        </VerticalTimeline>
       </div>
     </>
   );
