@@ -1,6 +1,6 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import { project } from "./comp";
+import { project } from "../assets/comp";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -11,7 +11,7 @@ const ProjectSection = () => {
   return (
     <>
       <h2
-        className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12"
+        className="text-center text-4xl font-bold text-white mt-20 mb-8 md:mb-12"
         id="project"
       >
         My Projects
