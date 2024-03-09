@@ -35,7 +35,7 @@ export const project = [
     {
         title: "cChat",
         icon: react,
-        iconBg: "#fbc3bc",
+        iconBg: "#accbe1",
         date: "Sept 2022 - Sept 2022",
         id: 3,
         image: "/images/project/3.png",

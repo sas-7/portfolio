@@ -38,6 +38,7 @@ const ProjectSection = () => {
                 borderStyle: "solid",
                 borderBottomColor: project.iconBg,
                 boxShadow: "none",
+                background: "#E6E6FA",
               }}
             >
               <div>
