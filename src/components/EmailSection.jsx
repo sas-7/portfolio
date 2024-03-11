@@ -13,10 +13,10 @@ const EmailSection = () => {
 
     emailjs
       .sendForm(
-        "service_pt7i6fe",
-        "template_0o2a1qk",
+        "service_l7lsu92",
+        "template_ex2k9ge",
         formRef.current,
-        "7fofTmxSDml9Na1_A"
+        "g_8wyCich76FG8zfV"
       )
       .then(
         (result) => {
