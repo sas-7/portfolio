@@ -44,7 +44,7 @@ const HeroSection = () => {
             <button
               onClick={() =>
                 window.open(
-                  "https://drive.google.com/file/d/10HgeLLyWSeyqkryFCbBVML5MBQOBaZgs/view?usp=drive_link",
+                  "https://drive.google.com/file/d/1zCj8q-CsJdnFvsxNp7SyF7GmTnHQ-mPs/view?usp=sharing",
                   "_blank"
                 )
               }
